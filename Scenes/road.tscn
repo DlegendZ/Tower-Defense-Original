@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://cj3ijbhrdtsgb"]
+
+[ext_resource type="Script" path="res://Script/Road.gd" id="1_cwdsv"]
+
+[sub_resource type="Curve3D" id="Curve3D_pisao"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -10.5, 0, 5.5, 0, 0, 0, 0, 0, 0, 10.4, 0, 5.5, 0, 0, 0, 0, 0, 0, 10.4, 0, -2.365, 0, 0, 0, 0, 0, 0, -10.5, 0, -2.5),
+"tilts": PackedFloat32Array(0, 0, 0, 0)
+}
+point_count = 4
+
+[node name="Road" type="Path3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3, 0)
+curve = SubResource("Curve3D_pisao")
+script = ExtResource("1_cwdsv")
+
+[node name="Timer" type="Timer" parent="."]
+process_callback = 0
+wait_time = 5.0
+one_shot = true
+
+[connection signal="timeout" from="Timer" to="." method="Summon_Enemy"]

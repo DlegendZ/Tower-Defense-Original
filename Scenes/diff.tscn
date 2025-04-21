@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://slrs4kx6x3cv"]
+
+[ext_resource type="Script" path="res://Script/diff.gd" id="1_owyus"]
+
+[sub_resource type="Curve" id="Curve_wuv3k"]
+min_value = 5.0
+max_value = 15.0
+_data = [Vector2(0, 5), 0.0, 10.0, 0, 1, Vector2(1, 15), 10.0, 0.0, 1, 0]
+point_count = 2
+
+[sub_resource type="Curve" id="Curve_sn5eh"]
+min_value = 1.5
+max_value = 10.0
+_data = [Vector2(0, 10), 0.0, -8.5, 0, 1, Vector2(1, 1.5), -8.5, 0.0, 1, 0]
+point_count = 2
+
+[node name="Diff" type="Node3D"]
+script = ExtResource("1_owyus")
+enemy_health_curve = SubResource("Curve_wuv3k")
+enemy_spawn_curve = SubResource("Curve_sn5eh")
+game_length = 30.0
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
+
+[connection signal="timeout" from="Timer" to="." method="level_completed"]

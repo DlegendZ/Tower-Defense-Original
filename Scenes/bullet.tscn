@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://cavcal7gyxvyx"]
+
+[ext_resource type="Script" path="res://Script/bullet.gd" id="1_l6whm"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yeowl"]
+albedo_color = Color(0.721569, 0, 0.164706, 1)
+emission_enabled = true
+emission = Color(0.921569, 0.305882, 0, 1)
+emission_energy_multiplier = 2.0
+
+[sub_resource type="SphereMesh" id="SphereMesh_m4cgk"]
+material = SubResource("StandardMaterial3D_yeowl")
+radius = 0.2
+height = 0.4
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_0lxhe"]
+radius = 0.2
+
+[node name="Bullet" type="Area3D"]
+script = ExtResource("1_l6whm")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("SphereMesh_m4cgk")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("SphereShape3D_0lxhe")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
