@@ -18,4 +18,3 @@ func _process(delta):
 				turret_manager.summon_turret(tile_pos)
 				HUD.current_gold -= 5
 				
-

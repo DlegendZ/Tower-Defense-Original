@@ -1,7 +1,7 @@
 [gd_scene load_steps=11 format=3 uid="uid://hmkhh3oqhjsd"]
 
 [ext_resource type="PackedScene" uid="uid://cw8clprbcpi06" path="res://Assets/GLTF format/towerRound_bottomA.glb" id="1_aumox"]
-[ext_resource type="Script" path="res://Script/turret.gd" id="1_cl1ui"]
+[ext_resource type="Script" uid="uid://c68auyf01gsme" path="res://Script/turret.gd" id="1_cl1ui"]
 [ext_resource type="PackedScene" uid="uid://c1vv287u1b7b8" path="res://Assets/GLTF format/towerRound_middleA.glb" id="2_m7lh8"]
 [ext_resource type="PackedScene" uid="uid://dueuy6gaj7fo6" path="res://Assets/GLTF format/towerRound_topA.glb" id="3_keemp"]
 [ext_resource type="PackedScene" uid="uid://dxttu40qf8dqc" path="res://Assets/GLTF format/weapon_cannon.glb" id="4_87eu4"]
@@ -305,8 +305,8 @@ tracks/11/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_803mm"]
 _data = {
-"RESET": SubResource("Animation_6o16s"),
-"Summon": SubResource("Animation_qbsw5")
+&"RESET": SubResource("Animation_6o16s"),
+&"Summon": SubResource("Animation_qbsw5")
 }
 
 [node name="Turret" type="Node3D"]
@@ -334,7 +334,7 @@ visible = false
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_803mm")
+&"": SubResource("AnimationLibrary_803mm")
 }
 autoplay = "Summon"
 

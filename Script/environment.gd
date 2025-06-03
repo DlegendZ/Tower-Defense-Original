@@ -11,7 +11,3 @@ var current_health :
 
 func _ready():
 	current_health = base_health
-
-
-
-

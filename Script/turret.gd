@@ -35,4 +35,3 @@ func shoot() :
 		bullet_manager.add_child(bullet_instances)
 		bullet_instances.direction = (target.global_position - cannon.global_position).normalized()
 		bullet_instances.global_position = cannon.global_position + Vector3(0,0.23,0)
-

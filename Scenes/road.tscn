@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://cj3ijbhrdtsgb"]
 
-[ext_resource type="Script" path="res://Script/Road.gd" id="1_cwdsv"]
+[ext_resource type="Script" uid="uid://fq4whxpxsrd3" path="res://Script/Road.gd" id="1_cwdsv"]
 
 [sub_resource type="Curve3D" id="Curve3D_pisao"]
 _data = {
